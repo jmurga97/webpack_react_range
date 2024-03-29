@@ -32,7 +32,7 @@ The `<Range />` component provides a input range with customizable min and max v
 - Clickable currency number labels for setting new values
 - Range constraints between min and max values
 - Hover effects, use of Pointer Events and cursor changes for better user experience
-- Mocked HTTP service with HTTP Next.js API Routes
+- Mocked HTTP service with mockable.io
 
 ### Usage
 Access the component at `localhost:8080/exercise1`.
@@ -47,7 +47,7 @@ The `<Range />` component provides a range input with a array of fixed values. S
 - Dragabble bullets for selecting range
 - Fixed range of bullet values
 - Range constraints between min and max values
-- Mocked HTTP service with HTTP Next.js API Routes
+- Mocked HTTP service with mockable.io
 
 ### Usage
 Access the component at `localhost:8080/exercise2`.
