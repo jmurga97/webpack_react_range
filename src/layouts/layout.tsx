@@ -7,8 +7,8 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <main className={`text-white`}>
-      <div className="bg-gradient-to-r from-purple-700 to-purple-900 -z-10 fixed top-0 left-0 w-full h-full"></div>
+    <main className={`text-black`}>
+      <div className="bg-white -z-10 fixed top-0 left-0 w-full h-full"></div>
       <Navbar />
       {children}
       <Footer />

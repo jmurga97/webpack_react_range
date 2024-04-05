@@ -31,12 +31,24 @@ const Range = ({
 
   return (
     <>
+    <div className="flex flex-row gap-3">
+
+
+      <InputRange
+        isFixed={isFixed}
+        range={range}
+        id="min"
+        label="Min."
+        bullet={bulletMin}
+        bulletReference={bulletMax}
+        setBullet={setBulletMin}
+      />
       <div
         ref={sliderRef}
         onPointerMove={handleMouseMove}
         className="w-[450px] h-12 flex items-center"
       >
-        <div className="relative w-full h-1 bg-white rounded-full]">
+        <div className="relative w-full h-1 bg-black rounded-full]">
           <RangeBullets
             isFixed={isFixed}
             isDragging={isDraggingMin}
@@ -51,27 +63,18 @@ const Range = ({
           />
         </div>
       </div>
-      <div className="flex w-[450px] px-1 text-white font-light text-lg justify-between mt-2">
-        <InputRange
-          isFixed={isFixed}
-          range={range}
-          id="min"
-          label="Min."
-          bullet={bulletMin}
-          bulletReference={bulletMax}
-          setBullet={setBulletMin}
-        />
-        <InputRange
-          isFixed={isFixed}
-          range={range}
-          id="max"
-          label="Max."
-          bullet={bulletMax}
-          bulletReference={bulletMin}
-          setBullet={setBulletMax}
-        />
-      </div>
-    </>
+
+      <InputRange
+        isFixed={isFixed}
+        range={range}
+        id="max"
+        label="Max."
+        bullet={bulletMax}
+        bulletReference={bulletMin}
+        setBullet={setBulletMax}
+      />
+    </div>
+  </>
   );
 };
 

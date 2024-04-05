@@ -7,7 +7,7 @@ type Props = {
     isFixed: boolean
 }
 
-export const RangeBullets = ({ isDragging ,setIsDragging, bulletPosition, isFixed=false }: Props) => {
+export const RangeBullets = ({ isDragging, setIsDragging, bulletPosition, isFixed = false }: Props) => {
     const bulletRef = useRef<HTMLDivElement>(null);
 
     const onMouseDown: PointerEventHandler<HTMLDivElement> = (e) => {
@@ -26,7 +26,7 @@ export const RangeBullets = ({ isDragging ,setIsDragging, bulletPosition, isFixe
             onPointerDown={onMouseDown}
             onPointerUp={onMouseUp}
             className={`${isDragging ? "cursor-grabbing" : "cursor-grab"} ${isFixed ? 'transition-all' : 'transition-transform'}
-                            absolute w-5 h-5 bottom-[-8px] border border-white rounded-full bg-white cursor-grab hover:scale-150 hover:bg-purple-700  shadow-md`}
+                        absolute w-5 h-5 bottom-[-8px] border border-white rounded-full bg-black cursor-grab hover:scale-150 shadow-md`}
             style={{ left: `${bulletPosition}%` }}
         />
     )
