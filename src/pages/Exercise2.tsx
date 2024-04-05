@@ -21,7 +21,7 @@ export default function Exercise2() {
                 />
             </Helmet>
 
-            <main className={`flex h-[80dvh] flex-col items-center px-24`}>
+            <main className={`flex h-[80dvh] flex-col items-center px-4 md:px-24`}>
                 <RangeContainer title={`2. Fixed Range: ${range.min} - ${range.max} $`}>
                     <Range range={range} steps={steps} isFixed />
                 </RangeContainer>

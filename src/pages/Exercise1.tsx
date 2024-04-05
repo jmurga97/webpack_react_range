@@ -20,7 +20,7 @@ export default function Exercise1() {
                     content="Component that provides a input range with customizable min and max values."
                 />
             </Helmet>
-            <main className={`flex h-[80dvh] flex-col items-center px-24`}>
+            <main className={`flex h-[80dvh] flex-col items-center px-4 md:px-24`}>
                 <RangeContainer
                     title={`1. Continuos Range: ${range.min} - ${range.max} $`}
                 >
