@@ -4,7 +4,7 @@ import { setInRange } from "../utils/setInRange";
 import { useDebouncedCallback } from "use-debounce";
 import type { RangeLimit } from "../types";
 
-type Props = {
+type Params = {
   range: RangeLimit;
   setBullet: React.Dispatch<React.SetStateAction<number>>;
   bullet: number;
@@ -18,7 +18,7 @@ export const useInputRange = ({
   id,
   setBullet,
   bulletReference,
-}: Props) => {
+}: Params) => {
   const [input, setInput] = useState<string | number>(bullet);
 
   useEffect(() => {
@@ -42,12 +42,14 @@ export const useInputRange = ({
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
+    const pattern = /^[0-9\b]+$/
+
     // Me aseguro que el input sea únicamente numerico
-    const numericValue = value.replace(/\D/g, "");
-    const inputValue = numericValue === "" ? range.min : numericValue;
-    const valueInRange = setInRange(range, parseInt(inputValue.toString()));
-    checkAndSetBullet(valueInRange);
-    setInput(value);
+    if (value === '' || pattern.test(value)) {
+      const valueInRange = setInRange(range, parseInt(value));
+      checkAndSetBullet(valueInRange);
+      setInput(value);
+    }
   };
 
   return {
