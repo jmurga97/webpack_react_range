@@ -51,9 +51,3 @@ The `<Range />` component provides a range input with a array of fixed values. S
 
 ### Usage
 Access the component at `localhost:8080/exercise2`.
-
-## Testing
-The project includes unit tests for Range component and utils folder
-```bash
-npm run test
-```
