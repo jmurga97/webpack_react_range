@@ -3,9 +3,13 @@ import Range from "../components/Range";
 import { Helmet } from "react-helmet";
 import { Loader } from "../components/Loader";
 import { useGetRange } from "../hooks/useGetRange";
+import { RangeLimit } from "../types";
+import { useState } from "react";
 
 export default function Exercise1() {
-    const {range, loader} = useGetRange('exercise1')
+    const { range, loader } = useGetRange('exercise1')
+    const [input, setInput] = useState<RangeLimit>(range)
+    const title = range ? `1. Continuos Range: ${input.min} - ${input.max} $` : 'Range missing'
 
     if (loader) {
         return <Loader />;
@@ -22,9 +26,9 @@ export default function Exercise1() {
             </Helmet>
             <main className={`flex h-[80dvh] flex-col items-center px-4 md:px-24`}>
                 <RangeContainer
-                    title={`1. Continuos Range: ${range.min} - ${range.max} $`}
+                    title={title}
                 >
-                    <Range range={range} />
+                    <Range range={range} setInput={setInput} />
                 </RangeContainer>
             </main>
         </>

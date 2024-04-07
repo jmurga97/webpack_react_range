@@ -5,11 +5,12 @@ import type { RangeLimit } from "../types";
 
 type Params = {
     range: RangeLimit;
+    setInput: (range: RangeLimit) => void;
     steps?: number[];
     isFixed?: boolean;
 };
 
-export const useRange = ({ isFixed, steps, range }: Params) => {
+export const useRange = ({ isFixed, steps, range, setInput }: Params) => {
     const sliderRef = useRef<HTMLDivElement>(null);
     const [bulletMin, setBulletMin] = useState(range.min);
     const [bulletMax, setBulletMax] = useState(range.max);
@@ -33,6 +34,7 @@ export const useRange = ({ isFixed, steps, range }: Params) => {
                 }
             }
         }
+        setInput({ min: bulletMin, max: bulletMax })
     };
     return {
         sliderRef,
