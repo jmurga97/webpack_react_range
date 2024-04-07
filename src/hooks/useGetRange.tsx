@@ -5,7 +5,8 @@ import type { RangeLimit } from "../types";
 export const useGetRange = (route: string) => {
     const [range, setRange] = useState<RangeLimit>({ min: 0, max: 100 });
     const [steps, setSteps] = useState([])
-    const [loader, setLoader] = useState(false);
+    const [loader, setLoader] = useState<boolean>(true);
+    const [error, setError] = useState<string>('')
     useEffect(() => {
         setLoader(true);
         axios
@@ -26,7 +27,10 @@ export const useGetRange = (route: string) => {
                 }
 
             })
-            .catch((e) => console.error(e))
+            .catch((e) => {
+                console.error(e)
+                setError('Oops, we could not find the range data :(')
+            })
             .finally(() => {
                 setLoader(false);
             });
@@ -34,6 +38,7 @@ export const useGetRange = (route: string) => {
     return {
         range,
         steps,
-        loader
+        loader,
+        error
     }
 }
