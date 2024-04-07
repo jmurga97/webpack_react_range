@@ -1,11 +1,11 @@
 import { PointerEventHandler, useRef } from "react";
 
 type Props = {
-    isDragging: boolean
-    setIsDragging: React.Dispatch<React.SetStateAction<boolean>>
-    bulletPosition: number,
-    isFixed: boolean
-}
+    isDragging: boolean;
+    setIsDragging: React.Dispatch<React.SetStateAction<boolean>>;
+    bulletPosition: number;
+    isFixed: boolean;
+};
 
 export const RangeBullets = ({ isDragging, setIsDragging, bulletPosition, isFixed = false }: Props) => {
     const bulletRef = useRef<HTMLDivElement>(null);
