@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const NavItem = ({ text }: { text: string }) => (
+const NavItem:React.FC<{text:string}> = ({ text }) => (
         <li className="underline hover:decoration-dashed" >
             {text}
         </li>

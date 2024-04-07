@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout:React.FC<Props> = ({ children }) => {
   return (
     <main className={`text-black`}>
       <div className="bg-white -z-10 fixed top-0 left-0 w-full h-full"></div>
